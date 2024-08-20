@@ -1,0 +1,33 @@
+<% if (smsg && smsg.length) { %> 
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert" id="success-alert">
+        <%= smsg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+<% } %> 
+
+<% if (emsg && emsg.length) { %> 
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert" id="error-alert">
+        <%= emsg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+<% } %> 
+
+<script>
+    // Auto-dismiss success alert after 5 seconds
+    setTimeout(function() {
+        const successAlert = document.getElementById('success-alert');
+        if (successAlert) {
+            const bsAlert = new bootstrap.Alert(successAlert);
+            bsAlert.close();
+        }
+    }, 5000);
+
+    // Auto-dismiss error alert after 5 seconds
+    setTimeout(function() {
+        const errorAlert = document.getElementById('error-alert');
+        if (errorAlert) {
+            const bsAlert = new bootstrap.Alert(errorAlert);
+            bsAlert.close();
+        }
+    }, 5000);
+</script>

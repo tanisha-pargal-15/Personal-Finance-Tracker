@@ -1,0 +1,84 @@
+<% layout("/layouts/boilerplate")%>
+
+<style>
+    .add-btn {
+      background-color: #4A90E2; /* Soft Blue */
+      color: #FFFFFF; /* White text */
+      border: none; /* Remove border */
+      padding: 0.5rem 1rem; /* Padding */
+      border-radius: 0.25rem; /* Rounded corners */
+    }
+
+    .add-btn:hover {
+      background-color: #357ABD; /* Darker Blue on hover */
+      color: #FFFFFF; /* Ensure text remains white */
+    }
+
+    
+  </style>
+
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2"><br>
+
+            <h3 >ADD EXPENSE</h3><br>
+            <!-- novalidate remove the default css of the browser and help to add bootstrap styling -->
+            <form method="post" action="/add-expense" novalidate class="needs-validation" >
+                
+                <div class="mb-3" >
+                    <label for="item" class="form-label">Item Bought</label>
+                    <input name="item" placeholder="Add name of an item" class="form-control" required>
+                    <div class="invalid-feedback">
+                        enter item
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Amount Spent</label>
+                    <input name="amount" placeholder="Enter amount spent" type="number" class="form-control" required>
+                    <div class="invalid-feedback">
+                        enter a valid number
+                    </div>
+                </div>
+           
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input name="date" type="date" class="form-control" required>
+                    <div class="invalid-feedback">
+                        enter date 
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="tag" class="form-label">Tag</label>
+                    <select name="tag" id="tag" class="form-control" required>
+                        <option value="" disabled selected>Select an expense category</option>
+                        <option value="rent">Rent/Mortgage</option>
+                        <option value="utilities">Utilities</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="education">Education</option>
+                        <option value="personal_care">Personal Care</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="subscriptions">Subscriptions</option>
+                        <option value="gifts">Gifts</option>
+                        <option value="insurance">Insurance</option>
+                        <option value="debt_repayment">Debt Repayment</option>
+                        <option value="miscellaneous">Miscellaneous</option>
+                                        
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a tag.
+                    </div>
+                  </div>
+        
+        
+        <button class="btn  add-btn">Add Expense</button><br><br><br>
+    </form>
+</div>
+</div>
+</body>
+
+<script src="/js/formCheck.js"></script>

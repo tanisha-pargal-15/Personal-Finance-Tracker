@@ -1,0 +1,266 @@
+
+    .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for card */
+    }
+
+  .card:hover {
+    transform: scale(1.05); /* Increase size by 5% */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Building out effect */
+    background-color: #4A90E2; /* Soft Blue (background color on hover) */
+    color: #FFFFFF; /* Ensure text is visible on the new background color */ 
+    }
+    .custom-btn {
+        background-color: #4A90E2; /* Soft Blue */
+    color: #FFFFFF; /* White text */
+    border: none;
+    }
+    .card:hover .custom-btn {
+    background-color: #FFFFFF; /* White background */
+    color: #1570d9;  /* Change text color to match the card's primary color for contrast */
+  }
+    
+    
+    .status{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    }
+    .status-image {
+    width: 400px; /* Or any desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 4rem;
+    }
+    .status-line {
+    margin-bottom: 1em;
+    margin-top: 0;
+    text-align: center; 
+    font-size: 1.2rem;
+    }
+    .search-and-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    gap: 1rem; /* Space between search and filters */
+  }
+    .search{
+        width: 75%;
+    }
+    .filters {
+    width: 25%;
+  }
+    .input-flex {
+    align-items: center;
+    border-radius: .5rem;
+    box-shadow: 0 0 20px 8px hsla(0, 0%, 89%, .75);
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-start;
+    padding: 0 .5rem;
+    width: 100%;
+    border: 1px solid #ccc; 
+    }
+   
+    .input-flex input[type="text"] {
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    width: 100%;
+    padding: 0.5rem;
+  }
+  /* Style for the icon */
+  .input-flex i {
+    color: #4A90E2; /* Optional: Set color to match theme */
+  }
+  .input-flex:hover {
+    border-color: #4A90E2; /* Soft Blue border on hover */
+  }
+
+   /* Custom dropdown button styling */
+   .custom-dropdown-btn {
+    background-color: transparent; /* Remove background */
+    border: none; /* Remove border */
+    color: #4A4A4A; /* Dark Gray text color */
+    padding: 0.5rem 1rem; /* Padding for better appearance */
+    width: 100%; /* Fit the entire width of the filters */
+    text-align: left; /* Align text to the left */
+    position: relative; 
+  }
+
+  
+  
+  .dropdown-menu {
+    width: 100%; /* Ensure the dropdown menu fits the width of the button */
+  }
+
+  .table-responsive {
+    /* Add a box shadow to create the bulding-out effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Optional: add border radius for rounded corners */
+    border-radius: 0.5rem;
+    background-color: #ffffff; /* Ensure background color */
+    margin-left: 34px;
+    width: 96%;
+}
+
+.table{
+    --bs-table-hover-bg: #e5edf6;
+}
+.sort-div {
+    border: 1px solid black;
+    padding: 0.2rem;
+    transition: all 0.3s ease; /* Smooth transition */
+    font-weight: 500;
+}
+
+/* Hover effect */
+.sort-div:hover {
+    border-color: #0c60c0; /* Soft Blue border */
+    color: #0c60c0; /* Soft Blue text color */
+    cursor: pointer;
+}
+.sort-option.selected {
+        border-color: #0c60c0; /* Soft Blue border */
+        color: #0c60c0; /* Soft Blue text color */
+    }
+
+    .file-import-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem; /* Space between file input and button */
+        padding-left: 2rem; /* Padding for the container */
+    }
+
+    .file-import-container input[type="file"] {
+        background-color: #ffffff; /* White background */
+        border: 1px solid #ccc; /* Light Gray border */
+        border-radius: .5rem; /* Rounded corners */
+        padding: 0.5rem;
+        width: 230px; /* Adjust width as needed */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    .file-import-container input[type="file"]:hover{
+      border: 1px solid #4A90E2;
+    }
+
+    .file-import-container button {
+        background-color: #4A90E2; /* Soft Blue */
+        color: #FFFFFF; /* White text */
+        border: none;
+        border-radius: .5rem; /* Rounded corners */
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    }
+
+    .file-import-container button:hover {
+        background-color: #357ABD; /* Darker blue for hover */
+    }
+
+
+.fa-circle-info{
+  color: #4A90E2;
+  font-size: 1.3rem;
+}
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 0 auto; /* Centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Could be more or less, depending on screen size */
+    max-width: 800px;
+    
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #0a68d4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* Show the modal on hover */
+.info-icon:hover + .modal {
+    display: block;
+}
+
+.incomeImage, .expenseImage{
+    width: 500px;
+
+}
+ 
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem;
+}
+
+.chart-wrapper {
+    flex: 1;
+    margin: 0 1rem;
+    position: relative;
+    /* Add shadow for bulging effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Rounded corners */
+    /* Optional: Add a slight 3D effect */
+}
+
+.income-chart {
+    flex: 70%;
+}
+
+.expense-chart {
+    flex: 30%;
+}
+
+/* Ensure canvas scales properly */
+canvas {
+    width: 100% !important;
+    height: auto !important;
+    /* Optional: Add a border to enhance effect */
+    
+}
+
+.delete-icon {
+    cursor: pointer; /* Changes the cursor to a pointer */
+    color: #4A90E2; /* Optional: Change the icon color to match the error theme */
+}
+
+.delete-icon:hover {
+    color: #0a68d4;/* Optional: Darken the color on hover */
+}

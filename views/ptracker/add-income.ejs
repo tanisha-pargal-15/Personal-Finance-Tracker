@@ -1,0 +1,114 @@
+<% layout("/layouts/boilerplate")%>
+
+<style>
+    .add-btn {
+      background-color: #4A90E2; /* Soft Blue */
+      color: #FFFFFF; /* White text */
+      border: none; /* Remove border */
+      padding: 0.5rem 1rem; /* Padding */
+      border-radius: 0.25rem; /* Rounded corners */
+    }
+
+    .add-btn:hover {
+      background-color: #357ABD; /* Darker Blue on hover */
+      color: #FFFFFF; /* Ensure text remains white */
+    }
+    /* Ensure the container takes the full width */
+.container {
+    width: 100%;
+}
+
+/* Flex properties for row */
+.row {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for form and image container */
+.form-container, .image-container {
+    box-sizing: border-box;
+}
+
+/* Responsive image */
+.image-container img {
+  max-height: 700px;
+    max-width: 100%;
+    height: auto;
+}
+.base-image {
+    width: 100%; /* Ensures the base image covers the container width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.overlay-image {
+    position: absolute; /* Position absolute relative to the container */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Adjust width as needed */
+    height: 20%; /* Maintain aspect ratio */
+    object-fit: cover; 
+    opacity: 0.8; /* Optional: adjust transparency */
+}
+
+    
+  </style>
+
+<body>
+  <div class="row mt-3">
+    <div class="col-8 offset-2"><br>
+
+        <h3 >ADD INCOME</h3><br>
+        <!-- novalidate remove the default css of the browser and help to add bootstrap styling -->
+        <form method="post" action="/add-income" novalidate class="needs-validation" >
+            
+            <div class="mb-3" >
+                <label for="title" class="form-label">Title</label>
+                <input name="title" placeholder="Add source of income" class="form-control" required>
+                <div class="valid-feedback">
+                    Title Looks good!
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="amount" class="form-label">Amount</label>
+                <input name="amount" placeholder="Enter amount" type="number" class="form-control" required>
+                <div class="invalid-feedback">
+                    enter a valid number
+                </div>
+            </div>
+       
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input name="date" type="date" class="form-control" required>
+                <div class="invalid-feedback">
+                    enter date 
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="tag" class="form-label">Tag</label>
+                <select name="tag" id="tag" class="form-control" required>
+                  <option value="" disabled selected>Select a tag</option>
+                  <option value="salary">Salary</option>
+                  <option value="freelance">Freelance</option>
+                  <option value="investment">Investment</option>
+                  <option value="game">Game</option>
+                  <option value="overtime">Overtime</option>
+                  <option value="other">Other</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a tag.
+                </div>
+              </div>
+    
+    
+    <button class="btn  add-btn">Add</button><br><br><br>
+</form>
+</div>
+</div>
+
+
+
+</body>
+
+<script src="/js/formCheck.js"></script>

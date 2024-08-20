@@ -1,0 +1,59 @@
+<style>
+    .btn-search{
+      background-color:#fe424d ;
+      color: white;
+      border-radius: 25px;
+      padding: 0 1rem 0 1rem;
+    }
+    .btn-search:hover{
+      background-color:#fe424d ;
+      opacity: 0.8;
+      color: white;
+    }
+    .btn-search i{
+      display: inline;
+      margin-right: 0.5rem;
+    }
+    .search-input{
+      border-radius: 25px;
+      padding: 0.4rem 4rem 0.4rem 4rem;
+      font-size: 1rem;
+    }
+    .navbar{height: 4rem; background-color: white;}
+
+.fa-coins{color: #4A90E2; font-size: 2rem;}
+
+.nav-link{color: #222222 !important;}
+
+  </style>
+  
+  <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/tracker"><i class="fa-solid fa-coins" aria-hidden="true"> Spend Smart</i></a>
+        <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNavAltMarkup" 
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          
+          <div class="navbar-nav ms-auto">
+            <% if(!currUser){  %>
+            <a class="nav-link "  href="/signup"><b>SignUp</b></a>
+            <a class="nav-link" href="/login"><b>Login</b></a>
+            <% } %>
+            <% if(currUser){  %>
+            <a class="nav-link" href="/logout"><b>Logout</b></a>
+            <% } %>
+          </div>
+          
+  
+  
+  
+          
+        </div>
+      </div>
+    </nav>
