@@ -90,9 +90,9 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.get("/",(req,res)=>{
-    res.send("root is working fine");
-});
+// app.get("/",(req,res)=>{
+//     res.send("root is working fine");
+// });
 
 app.get("/tracker", isLoggedIn, async (req, res) => {
     try {
