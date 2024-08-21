@@ -342,17 +342,17 @@ app.delete('/delete-entry/:id', isLoggedIn, async (req, res) => {
 });
 
 
-app.delete('/reset-data', async (req, res) => {
+app.delete('/reset-data', isLoggedIn, async (req, res) => {
     try {
-        // Delete all records from both collections
-        await Income.deleteMany({});
-        await Expense.deleteMany({});
+        // Delete all records from Income and Expense collections for the logged-in user
+        await Income.deleteMany({ user: req.user._id });
+        await Expense.deleteMany({ user: req.user._id });
 
-        console.log('All data from Income and Expense collections have been deleted.');
-        res.status(200).send('All data has been deleted successfully.');
+        console.log(`All data for user ${req.user._id} has been deleted from Income and Expense collections.`);
+        res.status(200).send('All your data has been deleted successfully.');
     } catch (error) {
         console.error('Error deleting data:', error);
-        res.status(500).send('An error occurred while deleting the data.');
+        res.status(500).send('An error occurred while deleting your data.');
     }
 });
 
